@@ -6,8 +6,8 @@ const routes = Router();
 
 routes
     .get(
-        ['/:shortcode'],
-        validations.getStats,
+        ['/:shortcode', '/'],
+        validations.getRedirectedToOriginalUrl,
         urlController.getOneByShortCode,
         urlController.validationInvalidRecord,
         urlController.redirectToMainUrl

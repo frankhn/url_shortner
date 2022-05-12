@@ -12,3 +12,9 @@ export const getStats = celebrate({
         shortcode: Joi.string().trim().alphanum()
     })
 })
+
+export const getRedirectedToOriginalUrl = celebrate({
+    params: Joi.object().keys({
+        shortcode: Joi.string().trim().alphanum().required()
+    })
+})
