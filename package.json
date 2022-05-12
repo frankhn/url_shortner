@@ -9,6 +9,7 @@
    "scripts": {
       "start": "ts-node src/index.ts",
       "dev": "nodemon",
+      "start:dev": "nodemon",
       "typeorm": "ts-node -r module-alias/register -r dotenv/config $(yarn bin typeorm)"
    },
    "devDependencies": {
