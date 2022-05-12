@@ -45,10 +45,15 @@ export class UrlController {
     }
 
     public redirectToMainUrl(req: Request, res: Response) {
-        const { currentUrl: { url } } = req;
+        const { currentUrl, DbConnection } = req;
         return asyncWrapper(res, async () => {
+            const repository = DbConnection.getRepository(Url);
+            await repository.save({
+                ...currentUrl,
+                click: currentUrl.click + 1
+            })
             res.writeHead(302, {
-                'location': `${url}`
+                'location': `${currentUrl.url}`
             })
             res.end()
         });
