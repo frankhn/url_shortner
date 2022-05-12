@@ -1,0 +1,6 @@
+dist
+.aws-sam
+commitlint.config.js
+scripts
+k6
+/src/tests/dotenv-config.ts
